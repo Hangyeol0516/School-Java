@@ -1,0 +1,32 @@
+package main;
+
+public class sort {
+
+	public static void main(String[] args) {
+		
+		// 배열 선언
+		int arr[] = new int[]{5, 4, 3, 2, 1};
+		
+		// 인덱스 값 1을 0과 비교하고
+		// 인덱스 값 2와 1을 비교하고 인덱스 값 1과 0을 비교
+		// 인덱스 값 3과 2를 비교하고 인덱스 값 2과 1을 비교하고 인덱스 값 1과 0을 비교
+		// 위 과정을 인덱스 값 5까지 반복하는 반복문 생성
+		for (int i = 1; i < arr.length; i++) {
+			for (int j = i; j > 0; j--) {
+				
+				if (arr[j] < arr[j-1]) {
+					int tmep = arr[j-1];
+					arr[j-1] = arr[j];
+					arr[j] = tmep;
+				}
+			}
+		}
+		
+		// 배열 출력
+		for (int i = 0; i < arr.length; i++) {			
+			System.out.print(arr[i] + " ");
+		}
+
+	}
+
+}
